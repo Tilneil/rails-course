@@ -31,27 +31,27 @@ get '/questions/edit' do
 end
 
 post '/questions/edit' do
-    @questions = Question.find(params[:id])
-    @questions.question = params[:question]
-    @questions.answer = params[:answer]
-    @questions.flag = params[:flag]
-    @questions.save
-    redirect '/questions/edit'
+    question = Question.find(params[:id])
+    question.question = params[:question]
+    question.answer = params[:answer]
+    question.flag = params[:flag]
+    question.save
+    redirect '/questions'
 end
 
 get '/' do
     erb :home
 end
 
-get '/guessa' do
+get '/guess' do
     questions = Question.all
     index = rand(questions.length)
-    @question = questions[index]
-    erb :guessa
+    @questions = questions[index]
+    erb :guess
 end
 
 get '/answer' do
-    @question = Question.find(params[:id])
+    @questions = Question.find(params[:id])
     erb :answer
 end
 
