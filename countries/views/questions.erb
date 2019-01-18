@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <style>
+        h1 {
+            color: red;
+        }
+        body {
+            font-family:Arial;
+            text-align:;
+        }
+        .center {
+            text-align: center
+        }
+        .a {
+            margin-left: 450px;
+            margin-right: 450px;
+        }
+        .b {
+            margin-left: 500px;
+            margin-right: 500px;
+        }
+        .c {
+            margin-left: 300px;
+            margin-right: 300px;
+        }
+        </style>
+    </head>
+    
+    
+    <body>
+    
+        <h1 class="center">Countries of the World</h1>
+
+        <img class="a" src = "http://www.greenne.com/wp-content/uploads/2013/05/globe-290x290.png" height=150px>
+    
+        <h1 class="center"><i>Trivia Guessing Game</i></h1>
+        
+        <h2 class="center">Question Administration Page</h2>
+    
+       <h3>Click "NEW" to add a new question.</h3>
+       <a  href="/questions/new">NEW</a>
+        
+        <h3>Click "EDIT" to edit current questions.</h3>
+        <% @questions.each do |q| %>
+        <br><br>
+            <div>
+                 <%= q.question %>
+                 <br>
+                 <%= q.answer %>
+                 <br>
+                 <img height="100" src="<%= q.flag %>">
+                 <br>
+                 <a href="/questions/edit?id=<%= q.id %>">EDIT</a>
+           </div>
+        <% end %>
+    </body>
+</html>
