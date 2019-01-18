@@ -7,6 +7,10 @@
         .b {
             margin-left: 47%;
         }
+        .c {
+            margin-left: 35%;
+            margin-right: 35%;
+        }
         </style>
     </head>
     
@@ -20,22 +24,24 @@
         <h1 style="text-align:center; color:red; font-family:Arial;"><i>Trivia Guessing Game</i></h1>
 
         <br>
-        <h2 style="font-family:Arial;">Here's your answer...</h2>
+        <h2 style="font-family:Arial; text-align:center;">Here's your answer...</h2>
         <br>
-        <p style="text-align:center;"><b>
+       <img class="c" src='<%= @question.flag %>' height=250px>  
+       
+       <h3 style="text-align:center;">
                 
-        <%= @q.answer %>
+        <%= @question.answer %>
             
-            </b></p>
-        <%= @q.flag %>
+        </h3>
+     
         
         <br>
         
-        <p>Want to play again? Request a new question by Clicking the button below. </p>
+        <p style="text-align:center;">Want to play again? Request a new question by Clicking the button below. </p>
         
         <br>
         <h3 style="text-align:center; font-family:Arial;">Request a Question</h3>
-        <a href="/questions/guess">
+        <a href="/guess">
             <img class="b" src="https://jsis.washington.edu/cwes-euc/wp-content/uploads/sites/11/2016/09/1000px-Circle-question-red.svg_-e1475596743432.png" height=50px>
         </a>
         

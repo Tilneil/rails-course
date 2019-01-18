@@ -31,30 +31,43 @@ get '/questions/edit' do
 end
 
 post '/questions/edit' do
-    question = Question.update
-    question.question = params[:question]
-    question.answer = params[:answer]
-    question.flag = params[:flag]
-    question.save
-    redirect '/questions'
+    @questions = Question.find(params[:id])
+    @questions.question = params[:question]
+    @questions.answer = params[:answer]
+    @questions.flag = params[:flag]
+    @questions.save
+    redirect '/questions/edit'
 end
 
-get '/questions/home' do
+get '/' do
     erb :home
 end
 
-get '/questions/guess' do
-    @questions = Question.all
-    q_no = rand(@questions.length)
-    @q = @questions[q_no]
-    erb :guess
+get '/guessa' do
+    questions = Question.all
+    index = rand(questions.length)
+    @question = questions[index]
+    erb :guessa
 end
 
-get '/questions/answer' do
-    
-        @questions = Question.find(params[:id])
-
-    @questions = Question.all
-    @q == question.primary_key
+get '/answer' do
+    @question = Question.find(params[:id])
     erb :answer
 end
+
+#use variables that you can say out loud
+# the @ symbols makes it similar to a globa variable that can be accessed anywhere in the app
+    
+# get '/guess' do
+# @questions = Question.all
+# q_no = rand(@questions.length)
+# @q = @questions[q_no]
+#     erb :guess
+# end
+
+# get '/answer' do
+# @questions = Question.all
+# q_no = rand(@questions.length)
+# @q = @questions[q_no]
+#     erb :answer
+# end
