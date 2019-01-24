@@ -1,0 +1,20 @@
+<% @contacts.each do |contact| %>
+
+        <div class="body">
+            <h3><%= contact.first_name %></h3>
+            <h3><%= contact.last_name %></h3>
+
+            <h4><%= contact.phone_number %></h4>
+            <h4><%= contact.email %></h4>
+            <h4><%= contact.address %></h4>
+            <h4><%= contact.city %></h4>
+            <h4><%= contact.state %></h4>
+            <h4><%= contact.zip_code %></h4>
+
+            <a href="/edit?id=<%= contact.id %>" class='c'>Edit</a>
+            <a href="/delete?id=<%= contact.id %>" class='c'>Delete</a>
+            <a href="/search">Search Contacts</a>
+        </div>
+            
+        <% end %>
+      
