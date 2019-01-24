@@ -2,24 +2,26 @@
     <head>
           <style type="text/css">
             .border {
-                border: 2.5px solid black;
+                border: 1.5px solid black;
                 width: auto;
-                height: 150px;
+                height: 100px;
                 margin-left: auto;
                 margin-right: auto;
-                background:#ffffcc;
+                background: #9AD0E8;
                 }
             
             .title {
                  display: inline-block;
                  margin-top: 5px;
                  margin-left: 10px;
+                 font-family: 'Lucida', sans-serif;
+                 color: Black;
                 }
             
             .logo {
-                float: right;
-                margin-top: 20px;
-                margin-right: 45px;
+                float: left;
+                margin-top: 10px;
+                margin-left: 25px;
                 }
                 
             .add {
@@ -30,26 +32,30 @@
                 margin-left: 10px;
                 margin-right: 10px;
                 padding: 5px;
+                font-family: 'Verdana';
+                line-height: 8px;
                 }
+                
+            .controls {
+                display: inline-block;
+                padding: 10px;
+            }
+            .space {
+                line-height: 30px;
+            }
                 
         </style>
     </head>
     <body>
         <div class="border">
             <div class="title"> 
-                <h1 style= 'color:#bb0000'>Ruby Programming for None Programmers</h1>
-                <h3><i>A blog space for Ruby programming students, hobbyist and none-programming folks.</i></h3>
+                <h1>Super Simple Contacts App</h1>
             </div>
              
             <div class="logo">
-                 <img src="https://dctacademy.com/wp-content/uploads/2015/06/ruby-logo.png" height=100px width=px>
+                 <img src="http://cdn.onlinewebfonts.com/svg/download_500842.png" height=75px width=px>
             </div>
         </div>
         <%= yield %>
     </body>
 </html>
-
-
-Layout page if we have styling and logos in layout we don't have to copy and paste to each erb.
-If you need to style a erb different from layout you can put the second style tag in the bottom of the page. 
-The program reads from top to bottom, so anything that is read earlier is replaced whats at the bottom
