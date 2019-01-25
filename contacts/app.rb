@@ -73,14 +73,17 @@ post '/results' do
     first_name = params[:first_name_search]
     last_name = params[:last_name_search]
 
-#access the database table contacts. Assign the variable @contacts to any database entries that are "like" the information the user entered for the variables we assigned earlier. 
+# #access the database table contacts. Assign the variable @contacts to any database entries that are "like" the information the user entered for the variables we assigned earlier. 
     @contacts = Contact.where("first_name LIKE ? OR last_name LIKE ?", first_name , last_name )  
     erb :results
     
+    
+    # @contacts = Contact.where("first_name LIKE ? OR last_name LIKE ?", query , query )  
+
     # @contacts = Contact.all
     
     # if
-    #     @contacts.first_name == Contact.where(" first_name LIKE ? ", '%first_name%') || @contacts.last_name == Contact.where(" last_name LIKE ? ", '%last_name%')  
+    #     @contacts.first_name == Contact.where(" first_name LIKE ? ", query ) || @contacts.last_name == Contact.where(" last_name LIKE ? ", query )  
     #     erb :results
         
     # else
