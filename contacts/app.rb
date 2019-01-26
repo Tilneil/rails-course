@@ -68,13 +68,16 @@ get '/search' do
     erb :find
 end
 
-#when the user submits, assign their entries params[...] to the following variables first_name and last_name.
+# #when the user submits, assign their entries params[...] to the following variables first_name and last_name.
 post '/results' do
-    first_name = params[:first_name_search]
-    last_name = params[:last_name_search]
+    query = "%#{params[:query]}%"
+    # first_name = params[:first_name_search]
+    # last_name = params[:last_name_search]
 
 # #access the database table contacts. Assign the variable @contacts to any database entries that are "like" the information the user entered for the variables we assigned earlier. 
-    @contacts = Contact.where("first_name LIKE ? OR last_name LIKE ?", first_name , last_name )  
+    
+    
+    @contacts = Contact.where("first_name LIKE ? OR last_name LIKE ?", query , query )  
     erb :results
     
     
