@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <form action="/questions/edit" method="post">
+            <textarea name="question" placeholder="Question">
+                <%= @questions.question %>
+            </textarea>
+            <input type="hidden" name="id" value="<%=@questions.id %>">
+            <input type="text" name="answer" value='<%= @questions.answer %>' placeholder="Answer">
+            <input type="text" name="flag" value='<%= @questions.flag %>'placeholder="Flag">
+            <input type="submit"  value="Save">
+        </form>
+    </body>
+</html>

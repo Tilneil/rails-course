@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style>
+        h1 {
+            color: red;
+        }
+        body {
+            font-family:Arial;
+            text-align:center;
+        }
+        .a {
+            margin-left: 450px;
+            margin-right: 450px;
+        }
+        .b {
+            margin-left: 500px;
+            margin-right: 500px;
+        }
+        .c {
+            margin-left: 300px;
+            margin-right: 300px;
+        }
+        </style>
+    </head>
+    
+    
+    <body>
+    
+        <h1>Countries of the World</h1>
+
+        <img class="a" src = "http://www.greenne.com/wp-content/uploads/2013/05/globe-290x290.png" height=150px>
+    
+        <h1><i>Trivia Guessing Game</i></h1>
+
+        <br>
+        
+        <h2>Here's your answer...</h2>
+       
+        <br>
+      
+        <img class="c" src="<%= @questions.flag %>" height=250px>  
+       
+        <h2><i>
+            "<%= @questions.answer %>"
+        </i></h2>
+      
+        <br>
+        
+        <p>Want to play again? <br> Request a new question by clicking the button below. </p>
+        
+        <br>
+        <h3>Request a Question</h3>
+        <a href="/guess">
+            <img class="b" src="https://jsis.washington.edu/cwes-euc/wp-content/uploads/sites/11/2016/09/1000px-Circle-question-red.svg_-e1475596743432.png" height=50px>
+        </a>
+        
+    </body>
+</html>

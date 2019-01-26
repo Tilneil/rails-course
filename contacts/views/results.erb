@@ -1,0 +1,25 @@
+<% @contacts.each do |contact| %>
+
+<div class="body">
+    <h4><%= contact.first_name %> <%= contact.last_name %></h4>
+    <p><%= contact.address %> <%= contact.city %> <%= contact.state %> <%= contact.zip_code %></p>
+    <p><%= contact.phone_number %></p>
+    <p><%= contact.email %></p>
+    <a href="/edit?id=<%= contact.id %>">Edit</a>
+    <a href="/delete?id=<%= contact.id %>">Delete</a> <br><br><br>
+ </div>
+
+<% end %>
+
+<div class="controls">
+<img src="https://image.flaticon.com/icons/svg/25/25694.svg" height=20px><a href="/"> Return Home</a>
+</div>
+
+<div class="controls">
+<img src="http://simpleicon.com/wp-content/uploads/add-user.png" height=20px><a href="/new"> Add New Contact</a>
+</div>
+    
+<div class="controls">
+<img src="http://cdn.onlinewebfonts.com/svg/download_458107.png" height=20px> <a href="/search"> Search Contacts </a>
+</div>
+      

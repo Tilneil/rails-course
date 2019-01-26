@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <style>
+            h1 {
+                text-align: center;
+            }
+            
+            a {
+                display: inline-block;
+                background-color: blue;
+                
+            
+            </style>
+    </head>
+    <body>
+        <h1>
+            <%= @questions.question %>
+            </h1>
+            <a href="/answer?id=<%=@questions.id %>">Answer</a>
+
+    </body>
+</html>
