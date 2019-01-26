@@ -34,7 +34,7 @@ post '/create' do
     redirect '/'
 end
 
-#when the user selects edit, search the contact by the id that is being selected and open the edit form.
+#when the user selects edit, search the contact by the id that is being selected and open the edit form for the user to enter their contact's information.
 get '/edit' do
     @contacts = Contact.find_by(id: params[:id])
     erb :edit
@@ -63,40 +63,24 @@ get '/delete' do
     redirect '/'
 end
 
-#when the user selects search from the home page, go to the form 'search'. 
+#when the user selects search from the home page, go to the form 'search' to enter their search criteria. 
 get '/search' do
     erb :find
 end
 
-# #when the user submits, assign their entries params[...] to the following variables first_name and last_name.
+#when the user submits, assign their entries params[...] to the following variables query.
 post '/results' do
     query = "%#{params[:query]}%"
-    # first_name = params[:first_name_search]
-    # last_name = params[:last_name_search]
-
-# #access the database table contacts. Assign the variable @contacts to any database entries that are "like" the information the user entered for the variables we assigned earlier. 
+   
+#access the database table contacts. Assign the variable @contacts to any database entries that are "like" the information the user entered for the variables we assigned earlier.
+#using the if statement if the array for contacts contains information !=0, then display the results page. 
+#if it does not contain information =0, then show contact not found page. 
+   
+    @contacts = Contact.where("first_name LIKE ? OR last_name LIKE ?", query , query ) 
     
-    
-    @contacts = Contact.where("first_name LIKE ? OR last_name LIKE ?", query , query )  
-    erb :results
-    
-    
-    # @contacts = Contact.where("first_name LIKE ? OR last_name LIKE ?", query , query )  
-
-    # @contacts = Contact.all
-    
-    # if
-    #     @contacts.first_name == Contact.where(" first_name LIKE ? ", query ) || @contacts.last_name == Contact.where(" last_name LIKE ? ", query )  
-    #     erb :results
-        
-    # else
-    #     erb :contact_not_found
-
-    # end
-    
-    # "'%first_name%'" users = User.where('age > :lowest_age AND age :highest_age ?',{ lowest_age: 10, highest_age: 20})
-
-
-#when the use clicks submit, it's linked to the results page. Open the results page and show all the entries that matches the search above.
-
+    if @contacts.length != 0
+        erb :results
+    else
+        erb :contact_not_found
+    end
 end
