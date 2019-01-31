@@ -1,0 +1,25 @@
+<h1>Index</h1>
+
+<div>
+    
+    <div class="controls">
+    <img src="http://simpleicon.com/wp-content/uploads/add-user.png" height=20px><a href="visions/new"> Add New Vision</a>
+    </div>
+    
+    <div class="body">
+    
+    <% @visions.each do |vision| %>
+
+            <p>Media Type: <%=vision.type %></p>
+            <p>Title: <%=vision.title %></p>
+            <p>Artist or Author: <%=vision.artist_author %></p>
+            <p><%=vision.influence %> me to <%vision.description %>.</p>
+            <p>Link: <%=vision.url %></p>
+            <a href="/visions/edit?id=<%= vision.id %>">Edit</a>
+            <a href="/visions/destroy?id=<%= vision.id %>">Delete</a> <br><br><br>
+    </div>
+
+    <!--@visions = params[:goal_id]-->
+   
+    <% end %>
+</div>

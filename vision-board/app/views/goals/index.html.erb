@@ -1,0 +1,26 @@
+<h1>Index</h1>
+
+<div>
+    
+    <div class="controls">
+    <img src="http://simpleicon.com/wp-content/uploads/add-user.png" height=20px><a href="goals/new"> Add New Goal</a>
+    </div>
+    
+    <div class="body">
+    
+    <% @goals.each do |goal| %>
+
+            <img src="<%=goal.image %>">
+            <p><%=goal.goal_type %></p>
+            <p><%=goal.description %></p>
+            <p><%=goal.deadline %></p>
+            <a href="/goals/edit?id=<%= goal.id %>">Edit</a>
+            <a href="/goals/destroy?id=<%= goal.id %>">Delete</a> <br><br><br>
+    </div>
+
+    <!--@visions = params[:goal_id]-->
+   
+    <% end %>
+</div>
+
+ 
