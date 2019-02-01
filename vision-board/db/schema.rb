@@ -22,10 +22,8 @@ ActiveRecord::Schema.define(version: 2019_01_31_020853) do
   end
 
   create_table "visions", force: :cascade do |t|
-    t.string "type"
     t.string "title"
     t.string "artist_author"
-    t.string "influence"
     t.string "description"
     t.string "url"
     t.integer "goal_id"

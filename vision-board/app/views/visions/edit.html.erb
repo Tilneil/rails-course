@@ -1,41 +1,33 @@
-<form action='edit' method='POST'>
-    <div class='media types'>
-        <h3>Select the media type from the options below. </h3>
-        <select name='type'>
-            <option value='music'>Music</option>
-            <option value='video'>Video</option>
-            <option value='webpage'>Webpage</option>
-            <option value='image'>Image</option> 
-        </select>
+<h1>Visions</h1>
+
+<h3>Let's get this right!</h3>
+<p>Use this form to update your list of vision board media.</p>
+
+
+<form action='/visions/edit' method='POST'>
+    <input type='hidden' name='id' value='<%= @visions.id %>'>
+    
+    <div>
+        <input type='text' name='title' value='<%= @visions.title %>' placeholder='Video/Song Title'>
     </div>
     
     <div>
-        <input type='text' name='title' placeholder='Video/Song Title'>
+        <input type='text' name='artist_author' value='<%= @visions.artist_author %>'placeholder="Artist's or Author's Name">
     </div>
     
     <div>
-        <input type='text' name='artist_author' placeholder="Artist's or Author's Name">
-    </div>
-    
-    <div class='influence'>
-        <select name='influence'>
-            <option value='inspire'>Inspires</option>
-            <option value='motivate'>Motivates</option>
-            <option value='resource'>Is a resource</option>
-        </select>
+        <textarea name='description' placeholder='Enter media description here.'> <%= @visions.description %> </textarea>
     </div>
     
     <div>
-        <textarea name='description' placeholder='Enter media description here.'></textarea>
-    </div>
-    
-    <div>
-        <input type='text' name='link' placeholder='Enter URL link to video or song'>
+        <input type='text' name='url' value='<%= @visions.url %>' placeholder= '<% params[:url]%>'>
     </div>
      
     <div>
-    <select name='goal'>
-        <option value='goal_id'>'#{params[:}</option>
+    <select name='goal_id'>
+        <% @goals.each do |goal| %>
+            <option value="<%= goal.id %>"> <%= goal.goal_type %> </option>
+        <% end %>
     </select>
     </div>
     

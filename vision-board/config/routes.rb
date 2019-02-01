@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get '/visions' => 'visions#index'
     
     get '/visions/new' => 'visions#new'
-    post '/visions' => 'visions#create'
+    post '/visions/new' => 'visions#create'
     
     get '/visions/edit' => 'visions#edit'
     post '/visions/edit' => 'visions#update'
@@ -15,11 +15,13 @@ Rails.application.routes.draw do
     get '/goals' => 'goals#index'
 
     get '/goals/new' => 'goals#new'
-    post '/' => 'goals#create'
+    post '/goals/new' => 'goals#create'
     
     get '/goals/edit' => 'goals#edit'
     post '/goals/edit' => 'goals#update'
     
     get '/goals/destroy' => 'goals#destroy'
-
+    get '/goals/show' => 'goals#show'
+    
+    get '/visions/destroy' => 'visions#destroy'
 end

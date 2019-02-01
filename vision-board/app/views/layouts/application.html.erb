@@ -5,11 +5,41 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <style>
+            
+            .h1 {
+              font-family: 'Times', sans-serif;
+              color: black;
+              margin-top: 30px;
+              text-align: center;
+              line-height: 25px;
+            }
+                
+            .add {
+                padding: 5px;
+                margin-left: 45%;
+                margin-right: 45%;
+            }
+            
+            .body {
+                padding: 5px;
+                font-family: 'Verdana';
+                }
+                
+            .controls {
+                display: block;
+                padding: 5px;
+            }
+   </style>
   </head>
 
   <body>
+    <div class="h1">
+    <h1>2019 VISION BOARD</h1>
+    <h1><i>Your personal Vision Board Media Playlist</i></h1>
+</div>
+<br>
+<br>
     <%= yield %>
   </body>
 </html>
