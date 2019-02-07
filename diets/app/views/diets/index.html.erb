@@ -1,0 +1,20 @@
+<h1>Diet Plans</h1>
+
+<%= link_to 'New', new_diet_path %> 
+
+<% @diet.each do |diet| %>
+    <div>
+        <h2><%= diet.diet_type %></h2>
+        <p><%= diet.description %></p>
+        <a href="<%= diet.website %>"><%= diet.website %></a>
+    </div>
+    <div>
+        <%= link_to 'Edit', edit_diet_path(diet.id) %>
+    </div>
+    <div>
+        <%= link_to 'Delete', diet_path(diet.id), method: :delete %>
+    </div>
+    <div>
+        <%= link_to 'Show', diet_path(diet.id) %>
+    </div>
+<% end %>

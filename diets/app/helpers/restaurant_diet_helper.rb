@@ -1,0 +1,2 @@
+module RestaurantDietHelper
+end
