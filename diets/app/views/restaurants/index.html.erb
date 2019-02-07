@@ -1,34 +1,42 @@
-<h1>Restaurants</h1>
+<h1>Restaurant Listings</h1>
 
-<%= link_to 'New', new_restaurant_path %> 
+<br>
+
+<div>
+  <img src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/add-1-icon.png" height=35px>
+  <%= link_to 'Create New Restaurant Listing', new_restaurant_path %> 
+</div>
+
+<br>
 
 <div class="row">
 
 <% @restaurant.each do |restaurant| %>
-
-<div class="card" style="width: 15rem;">
-  <img src="<%= restaurant.logo %>" class="card-img-top" alt="<%= restaurant.name %> Logo">
-  <div class="card-body">
-    <h5 class="card-title"><%= restaurant.name %></h5>
-    <p class="card-text"><%= restaurant.address %></p>
-    <p class="card-text"><%= restaurant.city %>, <%= restaurant.state %> <%= restaurant.zip %></p>
-    <a href="<%= restaurant.website %>"> <%= restaurant.website %> </a>
-    
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-
-  </div>
-</div>
-  
-
-    <div>
-        <%= link_to 'Edit', edit_restaurant_path(restaurant.id) %>
-    </div>
-    <div>
-        <%= link_to 'Delete', restaurant_path(restaurant.id), method: :delete %>
-    </div>
-    <div>
-        <%= link_to 'Show', restaurant_path(restaurant.id) %>
+<div>
+   
+    <div class="card" style="width: 20rem;">
+           <div class="card-body">
+             <div>
+                <img src="<%= restaurant.logo %>" alt="<%= restaurant.name %> Logo" height=50px width = 50px>
+                <h5 class="card-title"><%= restaurant.name %></h5>
+                <p class="card-text"><%= restaurant.address %></p>
+                <p class="card-text"><%= restaurant.city %>, <%= restaurant.state %> <%= restaurant.zip %></p>
+                <a href=<%= restaurant.website %>> <%= restaurant.website %> </a>
+                <br><br>
+              </div>
+                <div>
+                  <img src="https://www.curves.com/sites/default/files/meal_plan_img1.png" height=35px>
+                  <%= link_to 'Diet Plans', restaurant_path(restaurant.id) %>
+                </div>
+              <div>
+                <img src="https://static1.squarespace.com/static/59e3eb4f914e6b07119f5200/t/59e9205cb7411c0d793466a6/1508450401643/ScreamingEagles-Sign-Form-Icon.png?format=1000w" height=35px>
+                <%= link_to 'Edit Listing', edit_restaurant_path(restaurant.id) %>
+              </div>
+              <div>
+                <img src="https://png.pngtree.com/svg/20170814/fy_recycle_bin_358384.png" height=35px>
+                <%= link_to 'Delete', restaurant_path(restaurant.id), method: :delete %>
+              </div>
+          </div>
     </div>
 <% end %>
+</div>
