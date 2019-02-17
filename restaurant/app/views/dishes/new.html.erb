@@ -1,0 +1,19 @@
+<div>
+<%= form_for @dish do |f| %>
+    <div>
+        <%= f.text_field :name, placeholder: 'Name' %>
+    </div>
+    <div>
+        <%= f.text_area :description, placeholder: 'Description' %>
+    </div>
+    <div>
+        <%= f.text_field :picture, placeholder: 'Picture' %>
+    </div>
+    <div>
+        <%= f.number_field :price, placeholder: 'Price'%>
+    </div>
+    <div>
+        <%= f.submit 'Save' %>
+    </div>
+<% end %>
+</div>

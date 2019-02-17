@@ -1,9 +1,9 @@
 <body>
-    <form action='/update' method="POST">
+    <form action='/update' method="GET">
         <input type="hidden" name="id" value="<%= @contacts.id %>"> 
             
             <div class="body">
-            <input type="text" name="first_name" value="<%= @contacts.first_name %>">
+            <input type="text" name="first_name" placeholder="<%= @contacts.first_name %>">
             </div>
          
             <div class="body">

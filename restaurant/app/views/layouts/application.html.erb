@@ -7,9 +7,30 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div class="col align-self-center">
+          <div>
+            <img src="https://cdn.shopify.com/s/files/1/2040/0303/products/Life_is_Too_Short_to_Skip_Dessert_Calligraphy_on_Cupcake_Silhouette_497868814_grande.jpg?v=1537488771", class="rounded float-left" height=150, width=125>
+          </div>
+          
+          <div>
+            <h1>Desserts Delivered</h1>
+            <h6><i>You crave the sweets, we deliver the goods!</i></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <main class='container'>
+      <%= yield %>
+    </main>
+
   </body>
+
 </html>
