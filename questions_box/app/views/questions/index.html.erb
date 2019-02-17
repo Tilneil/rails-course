@@ -1,0 +1,26 @@
+<div>
+    <%= link_to 'New', new_question_path %>
+</div>
+
+<div>
+    <% @questions.each do |question| %>
+        <div>
+            <%= question.title %>
+        </div>
+        <div>
+            <%= question.answer %>
+        </div>
+        <div>
+            <%= question.type_id %>        
+        </div>
+        <div>
+            <%= question.type_id %>        
+        </div>
+        <div>
+             <%= question.resource_name %>       
+        </div>
+        <div>
+            <%= question.web_link %>
+        </div>
+    <% end %>
+</div>

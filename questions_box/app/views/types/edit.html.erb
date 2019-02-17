@@ -1,0 +1,17 @@
+<div>
+    <%= form_for @type do |f| %>
+        <div>
+            <%= f.text_field :title, placeholder: 'Question Type' %>
+        </div>
+        <div>
+            <%= f.text_area :description, placeholder: 'Description' %>
+        </div>
+        <div>
+            <%= f.text_area :tips, placeholder: 'Facilitator Tips' %>
+        </div>
+        <div>
+            <%= f.submit 'Save' %>
+        </div>
+    <% end %>
+</div>
+    

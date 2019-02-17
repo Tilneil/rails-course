@@ -1,0 +1,21 @@
+<div>
+<%= link_to 'New', new_type_path %>
+</div>
+
+<div>
+    <% @types.each do |type| %>
+        <div>
+            <%= type.title %>
+        </div>
+        <div>
+            <%= type.description %>
+        </div>
+        <div>
+            <%= type.tips %>
+        </div>
+        <div>
+            <%= link_to 'Edit', edit_type_path %>
+        </div>
+    <% end %>
+</div>
+    

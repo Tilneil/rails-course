@@ -1,0 +1,23 @@
+<div>
+    <%= form_for @question do |q| %>
+        <div>
+            <%= q.text_area :q_title, placeholder: 'Question' %>
+        </div>
+        <div>
+            <%= q.text_area :answer, placeholder: 'Answer' %>
+        </div>
+        <div>
+            <%= q.text_area :tips, placeholder: 'Facilitator Tips' %>
+        </div>
+        <div>
+            <%= q.text_area :resource_name, placeholder: 'Resources Name' %>
+        </div>
+        <div>
+            <%= q.text_area :web_link, placeholder: 'Web Link to Resource' %>
+        </div>
+        <div>
+            <%= q.submit 'Save' %>
+        </div>
+    <% end %>
+</div>
+
