@@ -1,0 +1,51 @@
+<h2>Vision Media: Inspirations, motivations and resources to achieve your goals!</h2>
+
+<div class="controls">
+    <img src="https://cdn0.iconfinder.com/data/icons/math-business-icon-set/93/1_1-128.png" height=20px><a href="visions/new">Add New Vision</a>
+</div>
+
+<div>
+    <img src="https://static.thenounproject.com/png/461631-200.png" height=20px><a href="/goals">Return to Goals</a>
+</div>
+
+    
+<div class="body">
+    
+    <% @visions.each do |vision| %>
+
+    <div>
+        <p><b>Title:</b> <%= vision.title %></p>
+    </div>
+            
+    <div>
+        <p><b>Artist or Author:</b> <%= vision.artist_author %></p>
+    </div>
+            
+    <div>
+        <p><%= vision.description %></p>
+    </div>
+            
+    <div>
+        <b><a href="<%= vision.url %>"> Media Link </a></b>
+    </div>
+            
+    <br>
+            
+         
+            
+            <div class="controls">
+                <img src="https://cdn0.iconfinder.com/data/icons/math-business-icon-set/93/1_1-128.png" height=20px><a href="visions/new">Add Vision Media</a>
+            </div>
+            
+            <div class="controls">
+            <img src="https://image.flaticon.com/icons/svg/61/61456.svg" height=20px><a href="/visions/edit?id=<%= vision.id %>">Edit Vision Media</a>
+            </div>
+            
+            <div class="controls">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/delete-737-475058.png" height=20px><a href="/visions/destroy?id=<%= vision.id %>">Delete Vision Media</a> 
+            </div>
+            <br><br><br>
+    
+    <% end %>
+
+</div>

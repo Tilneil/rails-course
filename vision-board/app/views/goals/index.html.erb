@@ -1,0 +1,41 @@
+<div class="add">
+    <div>
+        <img src="https://image.flaticon.com/icons/png/512/262/262829.png" height=100px>
+    </div>
+    
+    <div>
+        <a href="goals/new"> Add New Goal</a>
+    </div>
+</div>
+    
+<div class="body">
+
+<div>
+    
+    <% @goals.each do |goal| %>
+
+            <h2>Goal: <%= goal.goal_type %></h2>
+            <img src="<%= goal.image %>" height=100px>
+            <h3><%= goal.description %></h3>
+            <h3> By: <%= goal.deadline %></h3>
+            
+            <div class="controls">
+                <img src="https://inspire.ec.europa.eu/sites/default/files/digital-delivery-02.png" height=20px><a href="/goals/show?id=<%= goal.id %>">Vision Media</a>
+            </div>
+            
+            <div class="controls">
+                <img src="https://cdn0.iconfinder.com/data/icons/math-business-icon-set/93/1_1-128.png" height=20px><a href="visions/new">Add Vision Media</a>
+            </div>
+            
+            <div class="controls">
+            <img src="https://image.flaticon.com/icons/svg/61/61456.svg" height=20px><a href="/goals/edit?id=<%= goal.id %>">Edit Goal</a>
+            </div>
+            
+            <div class="controls">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/delete-737-475058.png" height=20px><a href="/goals/destroy?id=<%= goal.id %>">Delete Goal</a> 
+            </div>
+            <br><br><br>
+    <% end %>
+    </div>
+</div>
+ 

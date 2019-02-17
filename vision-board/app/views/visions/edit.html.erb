@@ -1,0 +1,37 @@
+<h1>Visions</h1>
+
+<h3>Let's get this right!</h3>
+<p>Use this form to update your list of vision board media.</p>
+
+
+<form action='/visions/edit' method='POST'>
+    <input type='hidden' name='id' value='<%= @visions.id %>'>
+    
+    <div>
+        <input type='text' name='title' value='<%= @visions.title %>' placeholder='Video/Song Title'>
+    </div>
+    
+    <div>
+        <input type='text' name='artist_author' value='<%= @visions.artist_author %>'placeholder="Artist's or Author's Name">
+    </div>
+    
+    <div>
+        <textarea name='description' placeholder='Enter media description here.'> <%= @visions.description %> </textarea>
+    </div>
+    
+    <div>
+        <input type='text' name='url' value='<%= @visions.url %>' placeholder= '<% params[:url]%>'>
+    </div>
+     
+    <div>
+    <select name='goal_id'>
+        <% @goals.each do |goal| %>
+            <option value="<%= goal.id %>"> <%= goal.goal_type %> </option>
+        <% end %>
+    </select>
+    </div>
+    
+    <div>
+        <input type='submit' name='save' value='Save'> 
+    </div>
+</form>

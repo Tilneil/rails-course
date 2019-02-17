@@ -1,0 +1,33 @@
+<div>
+    <img src="https://static.thenounproject.com/png/461631-200.png" height=20px><a href="/goals">Return to Goals</a>
+</div>
+
+<div>
+<h1><%= @goals.goal_type %></h1>
+
+<h2><i>Vision Media</i></h2>
+
+<% @goals.visions.each do |vision| %>
+    <div>
+        <div>
+            <p><b>Title:</b> <%= vision.title %></p>
+        </div>
+            
+        <div>
+             <p><b>Artist or Author:</b> <%= vision.artist_author %></p>
+        </div>
+            
+        <div>
+             <p><%= vision.description %></p>
+        </div>
+        
+         <div>
+            <a href="<%= vision.url %>"> Media Link </a>
+        </div>
+         <br>
+    </div>
+    
+<% end %>
+  <br>
+           <br> 
+</div>

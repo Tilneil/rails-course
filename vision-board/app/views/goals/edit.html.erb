@@ -1,0 +1,22 @@
+<form action='/goals/edit' method='POST'>
+    <input type='hidden' name='id' value='<%= @goals.id %>'>
+      <div>
+        <input type='text' name='goal_type' value='<%= @goals.goal_type %>' placeholder="What's your goal? Describe in 3 words or less.">
+    </div>
+    
+    <div>
+        <textarea name='description' placeholder='Provide short description of your goal here.'> <%= @goals.description %></textarea>
+    </div>
+    
+    <div>
+        <input type='text' name='image' value='<%= @goals.image %>'placeholder='Enter a URL for an image that represents your goal.'>
+    </div>
+    
+    <div>
+       When will you like to accomplish your goal? <input type='date' name='deadline' value='<%= @goals.deadline %>'>
+    </div>
+    
+    <div>
+        <input type='submit' name='save' value='Save'> 
+    </div>
+</form>
