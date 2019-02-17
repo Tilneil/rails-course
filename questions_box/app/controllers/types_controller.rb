@@ -1,7 +1,7 @@
 class TypesController < ApplicationController
 
     def index
-        @types = Type.all
+        @type = Type.all
     end
     
     def new
@@ -9,11 +9,11 @@ class TypesController < ApplicationController
     end
     
     def create
-        type = Type.new
-        type.title = params[:type][:title]
-        type.description = params[:type][:description]
-        type.tips = params[:type][:tips]
-        type.save
+        @type = Type.new
+        @type.title = params[:type][:title]
+        @type.description = params[:type][:description]
+        @type.tips = params[:type][:tips]
+        @type.save
         redirect_to types_path
     end
     
@@ -22,11 +22,11 @@ class TypesController < ApplicationController
     end
     
     def update
-        type = Type.find(params[:id])
-        type.title = params[:type][:title]
-        type.description = params[:type][:description]
-        type.tips = params[:type][:tips]
-        type.save
+        @type = Type.find(params[:id])
+        @type.title = params[:type][:title]
+        @type.description = params[:type][:description]
+        @type.tips = params[:type][:tips]
+        @type.save
         redirect_to types_path
     end
     

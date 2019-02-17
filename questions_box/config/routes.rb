@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :questions
   resources :types
   root 'questions#index'
+  post 'questions/add_type' => 'questions#add_type'
 end

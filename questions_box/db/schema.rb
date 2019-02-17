@@ -13,6 +13,11 @@
 ActiveRecord::Schema.define(version: 2019_02_17_021745) do
 
   create_table "questions", force: :cascade do |t|
+    t.string "q_title"
+    t.string "answer"
+    t.string "resource_name"
+    t.string "web_link"
+    t.integer "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

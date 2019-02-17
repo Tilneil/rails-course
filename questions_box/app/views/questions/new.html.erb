@@ -7,7 +7,11 @@
             <%= q.text_area :answer, placeholder: 'Answer' %>
         </div>
         <div>
-            <%= q.text_area :tips, placeholder: 'Facilitator Tips' %>
+            <select name='type_id'>
+                <% @type.each do |type| %>
+                    <option value="<%= type.id %>"> <%= type.title %> </option>
+                <% end %>
+            </select>
         </div>
         <div>
             <%= q.text_area :resource_name, placeholder: 'Resources Name' %>
@@ -20,4 +24,5 @@
         </div>
     <% end %>
 </div>
+
 

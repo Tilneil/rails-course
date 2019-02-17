@@ -1,21 +1,39 @@
 <div>
+    <div>
+        <h1>Types of Questions From Teens</h1>
+    </div>
+    <div>
+        <p>
+        How facilitators respond to questions from teens can impact how safe a teen feels in your class, which
+        is very important to your teens' learning, application of new knowledge and skills, and social emotional development.
+        Facilitators should respond to questions while keeping healthy boundaries in mind and teaching teens how to think,
+        not what to think. The vast majority of questions teens ask can be placed into one of 4 categories; each
+        category has specific guidelines for how facilitators can respond in a way that supports safe space.
+        </p>
+    </div>
+</div>
+
+<div>
 <%= link_to 'New', new_type_path %>
 </div>
 
 <div>
-    <% @types.each do |type| %>
+    <% @type.each do |type| %>
         <div>
-            <%= type.title %>
+            <h3><%= type.title %></h3>
         </div>
         <div>
-            <%= type.description %>
+            <h4><%= type.description %></h4>
         </div>
         <div>
             <%= type.tips %>
         </div>
         <div>
-            <%= link_to 'Edit', edit_type_path %>
+            <%= link_to 'Edit', edit_type_path(type.id) %>
+        </div>
+        <div>
+            <img src="https://png.pngtree.com/svg/20170814/fy_recycle_bin_358384.png" height=35px>
+            <%= link_to 'Delete', type_path(type.id), method: :delete %>
         </div>
     <% end %>
 </div>
-    
