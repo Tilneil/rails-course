@@ -1,15 +1,61 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>ContactRails</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+    <head>
+          <style type="text/css">
+            .border {
+                border: 1.5px solid black;
+                width: auto;
+                height: 100px;
+                margin-left: auto;
+                margin-right: auto;
+                background: #9AD0E8;
+                }
+            
+            .title {
+                 display: inline-block;
+                 margin-top: 5px;
+                 margin-left: 10px;
+                 font-family: 'Lucida', sans-serif;
+                 color: Black;
+                }
+            
+            .logo {
+                float: left;
+                margin-top: 10px;
+                margin-left: 25px;
+                }
+                
+            .add {
+                padding: 5px;
+            }
+            
+            .body {
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 5px;
+                font-family: 'Verdana';
+                line-height: 8px;
+                }
+                
+            .controls {
+                display: inline-block;
+                padding: 10px;
+            }
+            .space {
+                line-height: 30px;
+            }
+                
+        </style>
+    </head>
+    <body>
+        <div class="border">
+            <div class="title"> 
+                <h1>Super Simple Contacts App</h1>
+            </div>
+             
+            <div class="logo">
+                 <img src="http://cdn.onlinewebfonts.com/svg/download_500842.png" height=75px width=px>
+            </div>
+        </div>
+        <%= yield %>
+    </body>
 </html>
