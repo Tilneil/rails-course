@@ -1,0 +1,38 @@
+<h1>Diet Plans</h1>
+
+<br>
+
+<div>
+<img src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/add-1-icon.png" height=35px>
+<%= link_to 'New', new_diet_path %>
+</div>
+
+<div>
+  <img src="https://png.pngtree.com/svg/20170629/home_green_613419.png" height=35px>
+  <%= link_to "Return to Home Screen", restaurant_diets_path %>
+</div>
+
+<br>
+
+<div>
+<% @diet.each do |diet| %>
+    <div>
+        <h2><%= diet.diet_type %></h2>
+        <p><%= diet.description %></p>
+        <a href="<%= diet.website %>"><%= diet.website %></a>
+    </div>
+    <div>
+        <img src="https://static1.squarespace.com/static/59e3eb4f914e6b07119f5200/t/59e9205cb7411c0d793466a6/1508450401643/ScreamingEagles-Sign-Form-Icon.png?format=1000w" height=35px>
+        <%= link_to 'Edit', edit_diet_path(diet.id) %>
+    </div>
+    <div>
+        <img src="https://png.pngtree.com/svg/20170814/fy_recycle_bin_358384.png" height=35px>
+        <%= link_to 'Delete', diet_path(diet.id), method: :delete %>
+    </div>
+    <div>
+        <img src="http://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/256/Restaurant-icon.png" height=35px>
+        <%= link_to 'Restaurants that Support Plan', diet_path(diet.id) %>
+    </div>
+    <br>
+<% end %>
+</div>

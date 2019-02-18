@@ -1,0 +1,28 @@
+<h2>Use this form to edit or update your restaurant listings.</h2>
+
+<%= form_for @restaurant do |f| %>
+    <div  class="form-group">
+        <%= f.text_field :logo, placeholder: "Logo" %>
+    </div>
+    <div>
+        <%= f.text_field :name, placeholder: "Name" %>
+    </div>
+    <div>
+        <%= f.text_field :address, placeholder: "Address" %>
+    </div>
+    <div>
+        <%= f.text_field :city, placeholder: "City" %>
+    </div>
+    <div>
+        <%= f.text_field :state, placeholder: "State" %>
+    </div>
+    <div>
+        <%= f.text_field :zip, placeholder: "Zip Code" %>
+    </div>
+    <div>
+        <%= f.text_field :website, placeholder: "Website URL" %>
+    </div>
+    <div>
+        <%= f.submit "Save" %>
+    </div>
+<% end %>

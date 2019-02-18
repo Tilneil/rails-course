@@ -1,0 +1,32 @@
+<h1>Enjoy this diet plan at the following local restaurants...</h1>
+
+<br>
+
+<div>
+        <h2><%= @diet.diet_type %></h2>
+        <h5><%= @diet.description %></h5>
+        <a href="<%= @diet.website %>"> <%= @diet.website %> </a>
+</div>
+
+<br>
+
+       <h4><i>Restaurant Listings:</i></h4>
+       
+<br>
+
+<div>
+ 
+    
+    <% @diet.restaurants.each do |restaurant| %>
+        <div>
+        <img src="<%= restaurant.logo %>" height=75px>
+        </div>
+        <h6><%= restaurant.name %></h6>
+        <p><%= restaurant.address %></p>
+        <p><%= restaurant.city %>, <%= restaurant.state %> <%= restaurant.zip %></p>
+        <a href="<%= restaurant.website %>"> View Restaurant's Website </a>
+        
+        <br><br>
+    
+    <% end %>
+</div>

@@ -1,0 +1,22 @@
+<h2>This restaurant supports the following diet plans...</h2>
+
+<div>
+        <img src="<%= @restaurant.logo %>" height=100px>
+        <h2><%= @restaurant.name %></h2>
+        <a href="<%= @restaurant.website %>"> View Restaurant's Website </a>
+</div>
+
+<div>
+    <%= form_tag '/restaurants/add_diet' do %>
+        <%= hidden_field_tag 'restaurant_id', @restaurant.id %>
+        <%= select_tag 'diet_id', options_from_collection_for_select(@diet, :id, :diet_type) %>
+        <%= submit_tag 'Add Diet Plan' %>
+    <% end %>
+</div>
+
+<div>
+    <h3>Supported Diet Plans:</h3>
+    <% @restaurant.diets.each do |diet| %>
+        <h3><%= diet.diet_type %></h3>
+    <% end %>
+</div>

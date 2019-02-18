@@ -1,0 +1,17 @@
+<h2>Use this form to edit or update your diet plans.</h2>
+
+
+<%= form_for @diet do |f| %>
+    <div>
+        <%= f.text_field :diet_type, placeholder: "Diet" %>
+    </div>
+    <div>
+        <%= f.text_area :description, placeholder: "Description" %>
+    </div>
+    <div>
+        <%= f.text_field :website, placeholder: "Website URL" %>
+    </div>
+    <div>
+        <%= f.submit "Save" %>
+    </div>
+<% end %>
