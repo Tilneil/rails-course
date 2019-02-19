@@ -7,11 +7,8 @@
             <%= q.text_area :answer, placeholder: 'Answer' %>
         </div>
         <div>
-            <select name='type_id'>
-                <% @type.each do |type| %>
-                    <option value="<%= type.id %>"> <%= type.title %> </option>
-                <% end %>
-            </select>
+            <%= hidden_field_tag 'question_id', @question.id %>
+            <%= select_tag 'type_id', options_from_collection_for_select(@type, :id, :title) %>
         </div>
         <div>
             <%= q.text_area :resource_name, placeholder: 'Resources Name' %>

@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   resources :types
   root 'questions#index'
   post 'questions/add_type' => 'questions#add_type'
+      
+  get '/questions/search' => 'questions#search'
+    
+    get '/questions/results' => 'questions#results'
+    post '/questions/results' => 'questions#results'
 end

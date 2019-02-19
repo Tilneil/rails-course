@@ -2,31 +2,33 @@
     <%= link_to 'New', new_question_path %>
 </div>
 
+<!--< @type.each do |type| %>-->
+<!--    <type.title %>-->
+<!--< end %>-->
+ 
 <div>
-    <% @question.each do |question| %>
+    <% @questions.each do |question| %>
         <div>
-            <%= question.q_title %>
+            <h3>Question: <%= question.q_title %></h3>
         </div>
         <div>
-            <%= question.answer %>
+            <h4>Answer</h4>
+            <p><%= question.answer %></p>
+        </div>
+   
+        <div>
+             <h5>For more information visit:</h5><%= question.resource_name %></h5>       
         </div>
         <div>
-            <% @type.each do |type| %>
-                <%= type.title %>
-            <% end %>
-        </div>
-        <div>
-             <%= question.resource_name %>       
-        </div>
+        
         <div>
             <%= question.web_link %>
         </div>
         <div>
-            <%= link_to 'Edit', edit_question_path(question.id) %>
+            <%= link_to 'Edit', edit_question_path(question) %>
         </div>
         <div>
-            <img src="https://png.pngtree.com/svg/20170814/fy_recycle_bin_358384.png" height=35px>
-            <%= link_to 'Delete', question_path(question.id), method: :delete %>
+           <%= link_to "Delete", question_path(question), method: :delete %>
         </div>
     <% end %>
 </div>

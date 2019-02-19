@@ -13,12 +13,13 @@
     </div>
 </div>
 
+
 <div>
 <%= link_to 'New', new_type_path %>
 </div>
 
 <div>
-    <% @type.each do |type| %>
+    <% @types.each do |type| %>
         <div>
             <h3><%= type.title %></h3>
         </div>
@@ -29,11 +30,14 @@
             <%= type.tips %>
         </div>
         <div>
-            <%= link_to 'Edit', edit_type_path(type.id) %>
+            <%= link_to 'Edit', edit_type_path(type) %>
         </div>
         <div>
             <img src="https://png.pngtree.com/svg/20170814/fy_recycle_bin_358384.png" height=35px>
-            <%= link_to 'Delete', type_path(type.id), method: :delete %>
+            <%= link_to 'Delete', type_path(type), method: :delete %>
+        </div>
+        <div>
+            <%= link_to 'Show', type_path(type), method: :get %>
         </div>
     <% end %>
 </div>
