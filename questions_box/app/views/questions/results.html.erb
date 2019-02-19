@@ -27,15 +27,15 @@
         <div>
             <%= question.type.tips%>
         </div>
+        <div>
+            <img src="https://cdn0.iconfinder.com/data/icons/flat-social-media-icons-set-round-style-1/550/netvibes-512.png" height=35px>
+            <%= link_to 'Add Question to My Page', add_question_path(question), method: :post %>
+        </div>
     <% end %>
-    
   
 <% end %>
 
-<div>
-    <img src="https://cdn0.iconfinder.com/data/icons/flat-social-media-icons-set-round-style-1/550/netvibes-512.png" height=35px>
-        <!--<= link_to 'Add Question to My Page', question_path(question), method: :post %>-->
-</div>
+
 <div>
     <img src="https://junkmailimages.blob.core.windows.net/large/80c5d9d9d43b4626bf7173fc9724afde.jpg" height=35px>
     <%= link_to 'Return Home', questions_path %>
@@ -44,17 +44,3 @@
     <img src="https://img.icons8.com/color/260/search.png" height=35px>
     <%= link_to 'Search Again', questions_search_path %>
 </div>
-
-
-<!--< @questions.each do |question| %>-->
-<!--    < a = question.type_id| %>-->
-<!--    < @type.each do |type| %>-->
-<!--    <-->
-<!--     <= type.title %>-->
-<!--     < end %>-->
-<!--     < end %>-->
-<!--%= question.q_title %>-->
-<!--<= question.answer %>-->
-<!--<= question.resource_name %>-->
-<!--<= question.web_link %>-->
-<!--< end %> -->

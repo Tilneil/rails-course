@@ -1,12 +1,7 @@
-<!--<h1>< @types.title %></h1>-->
 
 <h2><i>Questions</i></h2>
 
-<!--< @types.question.each do |question| %>-->
-<!--    % question.types.each do |type| %>-->
-<!--     % type.title %>-->
-<!--      end %>-->
-<!--     < end %>-->
+
 <% @questions.each do |question| %>
         <div>
             <h3>Question: <%= question.q_title %></h3>

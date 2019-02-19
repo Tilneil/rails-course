@@ -1,0 +1,12 @@
+   <% current_user.questions.each do |question| %>
+       <%= question.id %>
+        <div>
+            <%= question.q_title %>
+        </div>
+        <div>
+            <%= question.answer %>
+        </div>
+        <div>
+           <%= link_to "Remove", remove_question_path(question), method: :post %>
+        </div>
+    <% end %>

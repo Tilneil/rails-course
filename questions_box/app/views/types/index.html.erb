@@ -15,7 +15,8 @@
 
 
 <div>
-<%= link_to 'New', new_type_path %>
+<img src="https://cdn4.iconfinder.com/data/icons/simplicio/128x128/file_add.png" height=35px>
+<%= link_to 'Add New Question Type', new_type_path %>
 </div>
 
 <div>
@@ -30,14 +31,18 @@
             <%= type.tips %>
         </div>
         <div>
+            <img src="https://cdn4.iconfinder.com/data/icons/web-ui-color/128/Edit-512.png" height=35px>
             <%= link_to 'Edit', edit_type_path(type) %>
         </div>
         <div>
-            <img src="https://png.pngtree.com/svg/20170814/fy_recycle_bin_358384.png" height=35px>
+           <img src="https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/256/Recycle_Bin_Full.png" height=35px>
             <%= link_to 'Delete', type_path(type), method: :delete %>
         </div>
         <div>
-            <%= link_to 'Show', type_path(type), method: :get %>
+            <%= link_to 'Show Associated Questions', type_path(type), method: :get %>
         </div>
     <% end %>
 </div>
+
+
+ <
