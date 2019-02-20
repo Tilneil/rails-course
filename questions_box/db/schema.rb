@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2019_02_17_021745) do
   end
 
   create_table "user_questions", force: :cascade do |t|
-    t.string "user_id"
-    t.string "question_id"
+    t.integer "user_id"
+    t.integer "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

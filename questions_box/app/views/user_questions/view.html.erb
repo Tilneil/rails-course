@@ -1,0 +1,23 @@
+<% current_user.questions.each do |question| %>
+<div>
+     <%= question.id %> 
+</div>
+     
+        <div>
+            <%= question.q_title %>
+        </div>
+        <div>
+            <%= question.answer %>
+        </div>
+        <div>
+            <%= link_to 'Remove Question', remove_user_question_path(question), method: :delete %>
+        </div>
+        <!--<link_to 'Remove', remove_user_question_path(@user_question, question_id: question.id), method: :delete %>    -->
+    <!--< link_to "Delete Question", user_question_path(@user_question, user_question_id: user_question.id), method: :delete %>-->
+                <!--< link_to 'Delete', restaurant_path(restaurant.id), method: :delete %>-->
+<% end %>
+    
+<div>
+    <img src="https://img.icons8.com/color/260/search.png" height=35px>
+        <%= link_to 'Search Questions', user_questions_search_path %>
+</div>

@@ -1,7 +1,7 @@
 <% if @questions.length == 0 %>
        <h1>Sorry, we can't seem to find this question.</h1>
        <h3>Please email add_questions@questionsbox.com to have your questions added to our directory. Someone will respond within 48 hours with a response to your questions and resources. You will also be notified when the question has been added.</h3>
-       
+
 <% else %>
      <% @questions.each do |question| %>
         <div>
@@ -25,14 +25,10 @@
         <div>
             <%= question.type.tips%>
         </div>
+        <div>
+            <img src="https://cdn0.iconfinder.com/data/icons/flat-social-media-icons-set-round-style-1/550/netvibes-512.png" height=35px>
+                <%= link_to 'Add Question to My Page', add_user_question_path(question), method: :post %>
+        </div>
     <% end %>
 <% end %>
 
-<div>
-    <img src="https://junkmailimages.blob.core.windows.net/large/80c5d9d9d43b4626bf7173fc9724afde.jpg" height=35px>
-    <%= link_to 'Return Home', questions_path %>
-</div>
-<div>
-    <img src="https://img.icons8.com/color/260/search.png" height=35px>
-    <%= link_to 'Search Again', questions_search_path %>
-</div>

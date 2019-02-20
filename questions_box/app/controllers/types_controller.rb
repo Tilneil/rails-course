@@ -6,7 +6,6 @@ class TypesController < ApplicationController
     
     def new
         @type = Type.new
-        # @question = Question.all
     end
     
     def create
@@ -33,13 +32,12 @@ class TypesController < ApplicationController
     
     def show
         @type = Type.find(params[:id])
-        @questions = Question.find_by(id: params[:id])
+        @questions = Question.all
     end
-
     
-    def delete
-        type = Type.find_by(id: params[:id])
-        type.destroy
+    def destroy
+        @type = Type.find_by(id: params[:id])
+        @type.destroy
         redirect_to types_path
     end
     

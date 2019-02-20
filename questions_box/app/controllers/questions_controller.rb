@@ -2,12 +2,11 @@ class QuestionsController < ApplicationController
     
     skip_before_action :verify_authenticity_token
 
-    before_action :authenticate_user!
-    
     def index
         @questions = Question.all
-        query = "%#{params[:type_id]}%"
-        @type = Type.where("id LIKE ?", query)
+        @type = Type.all
+        # query = "%#{params[:type_id]}%"
+        # @type = Type.where("id LIKE ?", query)
         
         # @questions = Question.where(user_id: current_user.id)
     end
@@ -15,7 +14,6 @@ class QuestionsController < ApplicationController
     def new
         @question = Question.new
         @type = Type.all
-
     end
     
     def create
@@ -57,30 +55,10 @@ class QuestionsController < ApplicationController
         @questions = Question.all
         @type = Type.all
     end
-    
+       
     def results
         query = "%#{params[:query]}%"
         @questions = Question.where("q_title LIKE ?", query) 
         @type = Type.all
-    end
-    
-    def add
-        @questions = Question.find(params[:id])
-        user_question = UserQuestion.new
-        user_question.question_id = params[:id]
-        user_question.user_id = current_user.id
-        user_question.save
-        redirect_to questions_view_path(@questions)
-    end
-    
-    def view
-        @user_question = UserQuestion.all
-    end
-    
-   
-    def remove
-        @current_user = UserQuestion.find(params[:id])
-        @user_question.destroy
-        redirect_to questions_view_path(@questions)
     end
 end
