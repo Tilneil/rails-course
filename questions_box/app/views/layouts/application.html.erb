@@ -1,15 +1,95 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>QuestionsBox</title>
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <title>QuestionsBox</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      .a {
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+      }
+      
+      .title {
+        color: #20B2AA;
+        margin-top: 30px;
+        font-family: verdana;
+      }
+      
+      .subtitle {
+        color: #E94A22;
+        margin-top: 10px;
+      }
+      
+      .body {
+        margin: 10px;
+      }
+      
+      .menu {
+        font-family: verdana;
+        color: black;
+        margin-right: 15px;
+        margin-left: 15px;
+        height: 45px;
+      }
+      .b {
+        background: #FFF1C1;
+      }
+      .ques {
+        font-family: verdana;
+        font-weight: bold;
+        color: #F2466E; 
+        font-style: italic;
+      }
+      .ans {
+        font-family: verdana;
+        font-weight: bold;
+        font-style: italic;
+      }
+      .box {
+        padding: 10px;
+      }
+      .sub {
+        color: #20B2AA;
+        font-family: verdana;
+        text-align: center;
+        padding: 10px;
+      }
+      .type {
+        font-family: verdana;
+        font-style: italic;
+      }
+      .typetitle {
+        font-family: verdana;
+        text-align: center;
+        padding: 10px;
+      }
+         
+    </style>
   </head>
 
-  <body>
+  <body class="body">
+    <div class="a">
+      <div class="row">
+        <div class="col-md-1">
+          <img src='https://dinnerplanner.com/wp-content/uploads/2017/05/box-of-questions.jpg' height=160px>
+        </div>
+        <div class="col-md-11">
+          <h1 class='title'><b>QUESTION BOX</b></h1>
+          <h3 class='subtitle'><i>An app for reproductive health educators in answering our youth's most blush worthy questions!</i></h3>
+        </div>
+      </div>
+    </div> 
+    <div>
     <%= yield %>
+    </div>
   </body>
 </html>

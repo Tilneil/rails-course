@@ -1,0 +1,64 @@
+<div class="b">
+    <div class="menu">
+        <div class="row">
+            <div class="col-md-4">
+                <h5><b>Navigation Menu:</b></h5>
+            </div>
+            <div class="col-md-4">
+                <img src="https://junkmailimages.blob.core.windows.net/large/80c5d9d9d43b4626bf7173fc9724afde.jpg" height=35px>
+                <%= link_to 'Return Home', types_path %>
+            </div>
+            <div class="col-md-4">
+                <img src="https://cdn4.iconfinder.com/data/icons/simplicio/128x128/file_add.png" height=35px>
+                <%= link_to 'Add New Question Type', new_type_path %>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="sub">
+    <h3><b>Administrator's Page: Questions Type Index</b></h3>
+</div>
+
+<div>
+    <% @types.each do |type| %>
+<div class="box">
+    <div class="row">
+        <div class="col-md-2">
+            <h4>Question Type:</h4>
+        </div>
+        <div class="col-md-10">
+            <h4><%= type.title %></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <h5><i>Description:</i></h5>
+        </div>
+        <div class="col-md-10">
+            <p><%= type.description %></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <h5><i>Facilitator Tips:</i></h5>
+        </div>
+        <div class="col-md-10">
+            <p><%= type.tips %></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-10">
+            <img src="https://cdn4.iconfinder.com/data/icons/web-ui-color/128/Edit-512.png" height=35px>
+            <%= link_to 'Edit Question Type', edit_type_path(type) %>
+            <img src="https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/256/Recycle_Bin_Full.png" height=35px>
+            <%= link_to 'Delete Question Type', type_path(type), method: :delete %>
+            <img src="http://www.clker.com/cliparts/w/1/x/B/F/C/question-mark-hi.png" height=35px>
+            <%= link_to 'View Associated Questions', type_path(type), method: :get %>
+        </div>
+    </div>
+</div>
+    <% end %>
+</div>

@@ -1,0 +1,73 @@
+<div class="b">
+    <div class="menu">
+        <div class="row">
+            <div class="col-md-3">
+                <h5><b>Navigation Menu:</b></h5>
+            </div>
+            <div class="col-md-3">
+                <img src="https://junkmailimages.blob.core.windows.net/large/80c5d9d9d43b4626bf7173fc9724afde.jpg" height=35px>
+                <%= link_to 'Return Home', questions_path %>
+            </div>
+            <div class="col-md-3">
+                <img src="https://img.icons8.com/color/260/search.png" height=35px>
+                <%= link_to 'Search Questions', questions_search_path %>
+            </div>
+            <div class="col-md-3">
+                <img src="https://cdn4.iconfinder.com/data/icons/simplicio/128x128/file_add.png" height=35px>
+                <%= link_to 'Add New Question', new_question_path %>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="sub">
+    <h3><b>Administrator's Page: Search Results</h3>
+</div>
+
+<% if @questions.length == 0 %>
+       <h1>Sorry, we can't seem to find this question.</h1>
+       <h3>Please email add_questions@questionsbox.com to have your questions added to our directory. Someone will respond within 48 hours with a response to your questions and resources. You will also be notified when the question has been added.</h3>
+       
+<% else %>
+    <% @questions.each do |question| %>
+        <div class="box">
+            <div class="row">
+                <div class="col-md-2">
+                    <h4 class="ques">Question:</h4>
+                </div>
+                <div class="col-md-10">
+                    <h4><%= question.q_title %></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4 class="ans">Answer:</h4>
+                </div>
+                <div class="col-md-10">
+                    <h4><%= question.answer  %></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-10">
+                    <h4><i>For more information visit:</i> <a href="<%= question.web_link %>"><%= question.resource_name %></a></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-10">
+                    <h4><i>Facilitator Tips For:</i> <%= question.type.title %></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-10">
+                    <p><%= question.type.tips %></p>
+                </div>
+            </div>   
+        </div>
+    <% end %>
+<% end %>

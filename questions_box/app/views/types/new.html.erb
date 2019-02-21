@@ -1,0 +1,33 @@
+<div class="sub">
+    <h3><b>Administrator's Page: Add New Question Type</b></h3>
+</div>
+
+<div>
+<form>
+    <%= form_for @type do |f| %>
+        <div class="form-group">
+        <label>Enter Question Type</label>
+            <div>
+                <%= f.text_field :title, placeholder: 'Question Type' %>
+            </div>
+        </div>
+        <div class="form-group">
+        <label>Enter Description</label>
+            <div>
+                <%= f.text_area :description, placeholder: 'Description', cols: 165, rows: 3 %>            
+            </div>
+        </div>
+        <div class="form-group">
+        <label>Enter Facilitator Tips</label>
+            <div>
+                <%= f.text_area :tips, placeholder: 'Facilitator Tips', cols: 165, rows: 3  %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.submit 'Save' %>
+        </div>
+    <% end %>
+</form>
+</div>
+    
+

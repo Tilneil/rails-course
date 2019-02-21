@@ -1,0 +1,51 @@
+<div class="b">
+    <div class="menu">
+        <div class="row">
+            <div class="col-md-4">
+                <h5><b>Navigation Menu:</b></h5>
+            </div>
+            <div class="col-md-4">
+                <img src="https://junkmailimages.blob.core.windows.net/large/80c5d9d9d43b4626bf7173fc9724afde.jpg" height=35px>
+                <%= link_to 'Return Home', types_path %>
+            </div>
+            <div class="col-md-4">
+                <img src="https://cdn4.iconfinder.com/data/icons/simplicio/128x128/file_add.png" height=35px>
+                <%= link_to 'Add New Question Type', new_type_path %>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="sub">
+    <h3><b>Administrator's Page: Viewing Associated Question For</b></h3>
+    <h3><i><%= @type.title %></i></h3>
+</div>
+<div>
+    <% @type.questions.each do |question| %>
+<div class="box">
+    <div class="row">
+        <div class="col-md-2">
+            <h4 class="ques">Question:</h4>
+        </div>
+        <div class="col-md-10">
+            <h4><%= question.q_title %></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <h4 class="ans">Answer:</h4>
+        </div>
+        <div class="col-md-10">
+            <h4><%= question.answer  %></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-10">
+            <h4><i>For more information visit:</i> <a href="<%= question.web_link %>"><%= question.resource_name %></a></h4>
+        </div>
+    </div>
+<div>
+<% end %>
+</div>
