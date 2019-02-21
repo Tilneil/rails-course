@@ -1,17 +1,29 @@
+<div class="sub">
+    <h3><b>Administrator's Page: Edit Question Type</b></h3>
+</div>
+
 <div>
     <%= form_for @type do |f| %>
-        <div>
-            <%= f.text_field :title, placeholder: 'Question Type' %>
+        <div class="form-group">
+        <label>Enter Question Type</label>
+            <div>
+                <%= f.text_field :title, placeholder: 'Question Type' %>
+            </div>
         </div>
-        <div>
-            <%= f.text_area :description, placeholder: 'Description' %>
+        <div class="form-group">
+        <label>Enter Description</label>
+            <div>
+                <%= f.text_area :description, placeholder: 'Description', cols: 165, rows: 3 %>            
+            </div>
         </div>
-        <div>
-            <%= f.text_area :tips, placeholder: 'Facilitator Tips' %>
+        <div class="form-group">
+        <label>Enter Facilitator Tips</label>
+            <div>
+                <%= f.text_area :tips, placeholder: 'Facilitator Tips', cols: 165, rows: 3  %>
+            </div>
         </div>
-        <div>
-            <%= f.submit 'Save' %>
+        <div class="form-group">
+                <%= f.submit 'Save' %>
         </div>
     <% end %>
 </div>
-    

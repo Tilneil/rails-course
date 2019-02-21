@@ -1,13 +1,38 @@
-<h2><i>Search for Questions</i></h2>
-
-<div>
-    <form action='/user_questions/results' method="POST">
-        <div>
-            <input type="text" name="query" placeholder="Question">
+<div class="b">
+    <div class="menu">
+        <div class="row">
+            <div class="col-md-3">
+                <h5><b>Navigation Menu:</b></h5>
+            </div>
+            <div class="col-md-3">
+                <img src="https://junkmailimages.blob.core.windows.net/large/80c5d9d9d43b4626bf7173fc9724afde.jpg" height=35px>
+                <%= link_to 'Return Home', user_questions_path %>
+            </div>
+            <div class="col-md-3">
+                <img src="https://img.icons8.com/color/260/search.png" height=35px>
+                <%= link_to 'Search Questions', user_questions_search_path %>
+            </div>
+            <div class="col-md-3">
+                <img src="https://images.emojiterra.com/twitter/512px/1f5c3.png" height=35px>
+                <%= link_to 'My Saved Questions', user_questions_view_path %>
+            </div>
         </div>
-        <div>
-            <input type="submit" value="Submit">
-        </div>
+    </div>
 </div>
 
+<div class="sub">
+    <h3><b>Search For Questions</b></h3>
+</div>
+
+<div>
+    <h5>Enter a keyword (i.e. parents, condoms, partner, etc.).</h5>
+    
+    <div>
+    <form action='/user_questions/results' method="POST">
+            <input type="text" name="query" placeholder="Keyword">
+    </div>
+    <div>
+            <input type="submit" value="Submit">
+    </div>
+</div>
 

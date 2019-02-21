@@ -1,44 +1,81 @@
-<div>
-    <img src="https://cdn4.iconfinder.com/data/icons/simplicio/128x128/file_add.png" height=35px>
-    <%= link_to 'Add New Question', new_question_path %>
+<div class="b">
+    <div class="menu">
+        <div class="row">
+            <div class="col-md-3">
+                <h5><b>Navigation Menu:</b></h5>
+            </div>
+            <div class="col-md-3">
+                <img src="https://junkmailimages.blob.core.windows.net/large/80c5d9d9d43b4626bf7173fc9724afde.jpg" height=35px>
+                <%= link_to 'Return Home', questions_path %>
+            </div>
+            <div class="col-md-3">
+                <img src="https://img.icons8.com/color/260/search.png" height=35px>
+                <%= link_to 'Search Questions', questions_search_path %>
+            </div>
+            <div class="col-md-3">
+                <img src="https://cdn4.iconfinder.com/data/icons/simplicio/128x128/file_add.png" height=35px>
+                <%= link_to 'Add New Question', new_question_path %>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div>
-    <img src="https://junkmailimages.blob.core.windows.net/large/80c5d9d9d43b4626bf7173fc9724afde.jpg" height=35px>
-    <%= link_to 'Return Home', questions_path %>
+<br>
+<div class="sub">
+    <h3><b>Administrator's Page: Question's Index</b></h3>
 </div>
-<div>
-    <img src="https://img.icons8.com/color/260/search.png" height=35px>
-    <%= link_to 'Search Questions', questions_search_path %>
-</div>
-
 
 <div>
     <% @questions.each do |question| %>
-        <div>
-            <h3>Question: <%= question.q_title %></h3>
+<div class="box">
+    <div class="row">
+        <div class="col-md-2">
+            <h4 class="ques">Question:</h4>
         </div>
-        <div>
-            <h4>Answer</h4>
-            <p><%= question.answer %></p>
+        <div class="col-md-10">
+            <h4><%= question.q_title %></h4>
         </div>
-               <%= question.type.title %>
-        <div>
-             <h5>For more information visit:</h5><%= question.resource_name %></h5>       
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <h4 class="ans">Answer:</h4>
         </div>
-        <div>
-        
-        <div>
-            <%= question.web_link %>
+        <div class="col-md-10">
+            <h4><%= question.answer  %></h4>
         </div>
-        <div>
-            <img src="https://cdn4.iconfinder.com/data/icons/web-ui-color/128/Edit-512.png" height=35px>
-            <%= link_to 'Edit Question', edit_question_path(question) %>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
         </div>
-        <div>
-           <img src="https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/256/Recycle_Bin_Full.png" height=35px>
-           <%= link_to "Delete Question", question_path(question), method: :delete %>
+        <div class="col-md-10">
+            <h4><i>For more information visit:</i> <a href="<%= question.web_link %>"><%= question.resource_name %></a></h4>
         </div>
-    <% end %>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-10">
+            <h4><i>Facilitator Tips For:</i> <%= question.type.title %></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-10">
+            <p><%= question.type.tips %></p>
+        </div>
+    </div>   
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-10">
+               <img src="https://cdn4.iconfinder.com/data/icons/web-ui-color/128/Edit-512.png" height=35px>
+               <%= link_to 'Edit Question', edit_question_path(question) %>
+               <img src="https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/256/Recycle_Bin_Full.png" height=35px>
+               <%= link_to "Delete Question", question_path(question), method: :delete %>
+            </div>
+        </div>
+    </div>   
+<div>
+<br>
+<% end %>
 </div>
-

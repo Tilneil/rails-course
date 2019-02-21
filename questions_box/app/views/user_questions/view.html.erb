@@ -1,23 +1,74 @@
+<div class="b">
+    <div class="menu">
+        <div class="row">
+            <div class="col-md-3">
+                <h5><b>Navigation Menu:</b></h5>
+            </div>
+            <div class="col-md-3">
+                <img src="https://junkmailimages.blob.core.windows.net/large/80c5d9d9d43b4626bf7173fc9724afde.jpg" height=35px>
+                <%= link_to 'Return Home', user_questions_path %>
+            </div>
+            <div class="col-md-3">
+                <img src="https://img.icons8.com/color/260/search.png" height=35px>
+                <%= link_to 'Search Questions', user_questions_search_path %>
+            </div>
+            <div class="col-md-3">
+                <img src="https://images.emojiterra.com/twitter/512px/1f5c3.png" height=35px>
+                <%= link_to 'My Saved Questions', user_questions_view_path %>
+            </div>
+        </div>
+    </div>
+</div>
+
 <% current_user.questions.each do |question| %>
-<div>
-     <%= question.id %> 
-</div>
-     
-        <div>
-            <%= question.q_title %>
+    <div class="box">
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="ques">Question:</h4>
+            </div>
+            <div class="col-md-10">
+                <h4><%= question.q_title %></h4>
+            </div>
         </div>
-        <div>
-            <%= question.answer %>
+        <div class="row">
+            <div class="col-md-2">
+                <h4 class="ans">Answer:</h4>
+            </div>
+            <div class="col-md-10">
+                <h4><%= question.answer %></h4>
+            </div>
         </div>
-        <div>
-            <%= link_to 'Remove Question', remove_user_question_path(question), method: :delete %>
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+                <h4><i>For more information visit:</i> <a href="<%= question.web_link %>"><%= question.resource_name %></a></h4>
+            </div>
         </div>
-        <!--<link_to 'Remove', remove_user_question_path(@user_question, question_id: question.id), method: :delete %>    -->
-    <!--< link_to "Delete Question", user_question_path(@user_question, user_question_id: user_question.id), method: :delete %>-->
-                <!--< link_to 'Delete', restaurant_path(restaurant.id), method: :delete %>-->
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+                <h4><i>Facilitator Tips For:</i> <%= question.type.title %></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+                <p><%= question.type.tips %></p>
+            </div>
+        </div>  
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+                <%= link_to 'Remove Question', remove_user_question_path(question), method: :delete %>
+                <div>
+                 <%= question.id %> 
+                </div>
+            </div>
+        </div>  
+    </div>
 <% end %>
-    
-<div>
-    <img src="https://img.icons8.com/color/260/search.png" height=35px>
-        <%= link_to 'Search Questions', user_questions_search_path %>
-</div>
+
